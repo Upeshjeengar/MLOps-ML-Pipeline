@@ -76,9 +76,9 @@ def load_params(params_path: str) -> dict:
 `import yaml`
 2. Add the load_params function and initiate **params** var in main
 3. Add below code block to main:  
-with Live(save_dvc_exp=True) as live:
-    live.log_metric('accuracy', accuracy_score(y_test, y_test))
-    live.log_metric('precision', precision_score(y_test, y_test))
-    live.log_metric('recall', recall_score(y_test, y_test))`
+with Live(save_dvc_exp=True) as live:  
+    live.log_metric('accuracy', accuracy_score(y_test, y_test))  
+    live.log_metric('precision', precision_score(y_test, y_test))  
+    live.log_metric('recall', recall_score(y_test, y_test))  
 
     live.log_params(params)
