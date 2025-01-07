@@ -82,3 +82,15 @@ with Live(save_dvc_exp=True) as live:
     live.log_metric('recall', recall_score(y_test, y_test))  
 
     live.log_params(params)
+
+**Adding a remote S3 storage to DVC:**
+19. Login to AWS console  
+20. Create an IAM user (straight forward process) 
+Set policies => create access key => use case: CLI => copy access key and secret access key
+21. Create S3 (enter unique name and create) 
+22. pip install dvc[s3] 
+23. pip install awscli 
+24. aws configure 
+25. dvc remote add -d dvcstore s3://bucketname 
+26. dvc commit-push the exp outcome that you want to keep 
+27. Finally git add, commit, push
